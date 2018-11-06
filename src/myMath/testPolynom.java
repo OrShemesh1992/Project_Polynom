@@ -95,3 +95,4 @@ public class testPolynom {
 		System.out.println("f(x)= 0+0x^0+0.0+0x^2+2x is zero function? " + p15.isZero());
 	}
 }
+

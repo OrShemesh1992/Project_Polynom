@@ -1,3 +1,4 @@
+
 package myMath;
 
 public class testMonom {
@@ -82,6 +83,4 @@ public class testMonom {
 
 	}
 }
-
-
 

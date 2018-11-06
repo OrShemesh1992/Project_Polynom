@@ -7,7 +7,7 @@ public class testMonom {
 		/**
 		 * testing monom constructor
 		 */
-		Monom a1 = new Monom(-2.3 , 1);
+		Monom a1 = new Monom(-2.8 , 1);
 		System.out.println("Monom constructor: " + a1); 
 		/**
 		 * testing copy constructor

@@ -154,7 +154,7 @@ public class Monom implements function{
  */
 	public Monom (String str)
 	{
-		if(str==null)System.out.println("eror");
+		if(str==null)throw new RuntimeException("ERR: The String is null");
 		double a=0;
 		int b=0;
 		String StrLower=str.toLowerCase();//X---->x

@@ -69,15 +69,15 @@ public class testMonom {
 		Monom a17=new Monom ("x^2");
 		
 		System.out.println("\nAll the option to get String and return Monom\n");
-		System.out.print(a8+" , ");
-		System.out.print(a9+" , ");
-		System.out.print(a10+" , ");
-		System.out.print(a11+" , ");
-		System.out.print(a12+" , ");
-		System.out.print(a13+" , ");
-		System.out.print(a14+" , ");
-		System.out.print(a15+" , ");
-		System.out.print(a16+" , ");
+		System.out.print(a8+",");
+		System.out.print(a9+",");
+		System.out.print(a10+",");
+		System.out.print(a11+",");
+		System.out.print(a12+",");
+		System.out.print(a13+",");
+		System.out.print(a14+",");
+		System.out.print(a15+",");
+		System.out.print(a16+",");
 		System.out.print(a17);
 		
 

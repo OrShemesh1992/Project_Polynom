@@ -79,19 +79,6 @@ public class Monom implements function{
 
 	}
 	/**
-	 * This function get Monom and if the power of the Monom is equal to 
-	 * the power the second Monom it's (-)sub them.
-	 * example :2x^2-3x^2=-1x^2
-	 * @param m
-	 */
-	public void substract(Monom m)
-	{
-		if(this._power==m.get_power())
-			this._coefficient-=m.get_coefficient();	
-		else
-			throw new RuntimeException("ERR: The power is not the same ");	
-	}
-	/**
 	 * This function get Monom and multiply the coefficient and add power
 	 * example :2x^2*3x^2=6x^4
 	 * @param m

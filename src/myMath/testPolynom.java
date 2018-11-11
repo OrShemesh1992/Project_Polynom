@@ -10,6 +10,7 @@ public class testPolynom {
 		Monom m3 = new Monom(6 , 2);
 		Monom m4 = new Monom(-3 , 0);
 		Monom m5 = new Monom(3 , 0);
+		Polynom m6 = new Polynom("5x^3");
 		p.add(m1);
 		p.add(m2);
 		p.add(m3);
@@ -36,16 +37,16 @@ public class testPolynom {
 		 * testing for adding Monom to Polynom
 		 */
 		p1.add(m3);
-		System.out.println("\nadd Monom : \nf(x)= 5x^3 + 6x^2 + 2x^1 + 3" + "\ng(x)= 6x^2" + "\nf(x)+g(x) = " + p1);
+		System.out.println("\nadd Monom : \nf(x)= 5.0*x^3 + 6.0*x^2 - 2.0*x^1 - 3.0" + "\ng(x)= 6x^2" + "\nf(x)+g(x) = " + p1);
 		/**
 		 * testing for adding 2 polynomials
 		 */
 		p1.add(p3);
-		System.out.println("\nadd polynom : \nf(x)= 5x^3 + 12x^2 + 2x + 3" + "\ng(x)= 5x^3 + 2x + -3" + "\nf(x)+g(x)= " + p1);
+		System.out.println("\nadd polynom : \nf(x)= 5x^3 + 12x^2 - 2x - 3" + "\ng(x)= 5x^3 - 2x + 3" + "\nf(x)+g(x)= " + p1);
 		/**
 		 * testing for substract Monom to polynom
 		 */
-		p3.substract(m2);
+		p3.substract(m6);
 		System.out.println("\nsub Monom : \nf(x)= 5x^3 - 2x + 3" + "\ng(x)= 5x^3" + "\nf(x)-g(x)= " + p3 );
 		/**
 		 * testing for substract 2 polynomials
@@ -95,4 +96,3 @@ public class testPolynom {
 		System.out.println("f(x)= 0+0x^0+0.0+0x^2+2x is zero function? " + p15.isZero());
 	}
 }
-

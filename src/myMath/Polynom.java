@@ -112,11 +112,11 @@ public class Polynom implements Polynom_able{
 		if(m1.get_coefficient()!=0)
 		{
 			boolean flag=false;
-			Iterator<Monom> It=this.iteretor();
+			Iterator<Monom> It = this.iteretor();
 			while (It.hasNext())
 			{
 				Monom temp=It.next();
-				if(temp.get_power()==m1.get_power())
+				if(temp.get_power() == m1.get_power())
 				{
 					temp.add(m1);
 					flag=true;
@@ -142,32 +142,6 @@ public class Polynom implements Polynom_able{
 		}
 	}
 	/**
-	 * Sub Monom to this Polynom
-	 * Example : f(x)=x^2+2x g(x)=3x^2---> f(x)-g(x)=-2x^2+2x
-	 * @param m1 
-	 */
-	public void substract(Monom m1) 
-	{
-		if(m1.get_coefficient()!=0)
-		{
-			boolean flag=false;
-			Iterator<Monom> It=this.iteretor();
-			while (It.hasNext())
-			{
-				Monom temp=It.next();
-				if(temp.get_power()==m1.get_power())
-				{
-					temp.substract(m1);
-					flag=true;
-				}
-			}
-			if(flag==false)
-				this._Polynom.add(m1);
-			Monom_Comperator cmpByPower=new Monom_Comperator();
-			this._Polynom.sort(cmpByPower);
-		}
-	}
-	/**
 	 * Sub Polynom to this Polynom
 	 * Example : f(x)=x^2+2x g(x)=8x^3-3x^2+4x---> f(x)-g(x)=8x^3+4x^2+6x
 	 * @param p1 
@@ -177,7 +151,9 @@ public class Polynom implements Polynom_able{
 		Iterator<Monom> It=p1.iteretor();
 		while(It.hasNext())
 		{
-			this.substract(It.next());
+			Monom a=It.next();
+			Monom temp = new Monom(a.get_coefficient()*-1,a.get_power());
+			this.add(temp);
 		}
 	}
 	/**
@@ -279,7 +255,6 @@ public class Polynom implements Polynom_able{
 	 */
 	public boolean equals(Polynom_able p1) 
 	{
-
 		Iterator<Monom> It=this._Polynom.iterator();
 		Iterator<Monom> ItP1=p1.iteretor();
 		if(It.hasNext()&&ItP1.hasNext())
@@ -317,7 +292,7 @@ public class Polynom implements Polynom_able{
 	 */
 	public String toString()
 	{
-		String str="[";
+		String str="";
 		Iterator<Monom> It=this.iteretor();
 		while (It.hasNext())
 		{
@@ -335,7 +310,6 @@ public class Polynom implements Polynom_able{
 				str=str.substring(0,str.length()-3);
 			}
 		}
-		str+="]";
 		return str;
 	}
 }

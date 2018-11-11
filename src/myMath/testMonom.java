@@ -28,15 +28,9 @@ public class testMonom {
 		a1.add(a2);
 		System.out.println("\nadd 2 monoms:\nf(x)= -2.3x  , g(x)= -2.3x \nf(x)+g(x)= " + a1 );
 		/**
-		 * testing for substract Monom to other Monom
-		 */
-		Monom a3=new Monom (5,3);
-		Monom a4=new Monom (4,3);
-		a3.substract(a4);
-		System.out.println("\nsubstract 2 monoms:\nf(x)= 5x^3 , g(x)= 4x^3 \nf(x)-g(x)= " + a3);
-		/**
 		 * test to multiply Monom by other Monom
 		 */
+		Monom a4=new Monom (4,3);
 		Monom a18 = new Monom(3 , 3);
 		a18.multiply(a4);
 		

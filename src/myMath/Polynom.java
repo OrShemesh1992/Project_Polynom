@@ -3,7 +3,7 @@ package myMath;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-
+import fr.julien.graphique.element.point.Point;
 import myMath.Monom;
 /**
  * This class represents a Polynom with add, multiply functionality, it also should support the following:
@@ -246,6 +246,28 @@ public class Polynom implements Polynom_able{
 			}
 		}
 		return sum;
+	}
+	/**
+	 * because in the first area function we can't find a negative area,
+	 * we create a new area function that calculate the negative area in the function.
+	 */
+	public double areaNegative(double x0, double x1, double eps) 
+	{
+		double temp;
+		double sum = 0.0;
+		if(x0>x1) {
+			temp=x0;
+			x0=x1;
+			x1=temp;
+		}
+		for (Double i=x0;i<x1;i=i+eps)
+		{
+			if(f(i)<=0)
+			{
+				sum+=((f(i)+f(i+eps))/2)*eps;	
+			}
+		}
+		return Math.abs(sum);
 	}
 	/**
 	 * This function get Polynom and checking if there equals

@@ -74,6 +74,12 @@ public class testPolynom {
 		Polynom p9 = new Polynom("x");
 		System.out.println("\nCheaking Positive area between -2 to 2 f(x) = x\n" + p9.area(-2, 2, 0.01));
 		/**
+		 * testing the negative area
+		 */
+		Polynom poly = new Polynom("0.2x^4-1.5x^3+3.0x^2-x-5");
+		System.out.println("\nThe negtive area for 0.2x^4-1.5x^3+3.0x^2-x-5 is:\n"
+				+ poly.areaNegative(-2, 6, 0.01));
+		/**
 		 * testing root function
 		 */
 		Polynom p10= new Polynom ("x^3+4x-1");

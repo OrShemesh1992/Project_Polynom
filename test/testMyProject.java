@@ -151,6 +151,14 @@ class testMyProject {
 		}
 	}
 	@Test
+	void testNagtive() {
+		Polynom poly = new Polynom("0.2x^4-1.5x^3+3.0x^2-x-5");
+		double output = 25.18300449554026;
+		if(output != poly.areaNegative(-2, 6, 0.01)){
+			fail("fail");
+		}
+	}
+	@Test
 	void testEqualsPolynom() {
 		boolean output = poly1.equals(poly4);
 		assertEquals(true , output);

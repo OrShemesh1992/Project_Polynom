@@ -15,7 +15,6 @@ import myMath.Monom;
  *
  */
 
-
 public class Polynom implements Polynom_able{
 	private ArrayList<Monom>  _Polynom;
 	/**
@@ -59,18 +58,39 @@ public class Polynom implements Polynom_able{
 		}
 		if(str.charAt(0)!='-') plusMin="+"+plusMin;
 		String[] SplitToMonom=StrLower.split("\\+|\\-");
-		for (int i = 0; i < SplitToMonom.length; i++) {
-			if(plusMin.charAt(i)=='-')
+		if(plusMin.charAt(0)=='-')
+		{
+		for (int i = 1; i < SplitToMonom.length; i++) {
+
+			if(plusMin.charAt(i-1)=='-')
 			{
 				Monom Temp=new Monom(SplitToMonom[i]);
 				Monom Minos=new Monom ("-1");
 				Temp.multiply(Minos);
 				S_ToPolynom.add(Temp);
 			}	
-			else
+			else 
 			{
 				Monom Temp=new Monom(SplitToMonom[i]);
 				S_ToPolynom.add(Temp);
+			}
+		}
+		}else if(plusMin.charAt(0)=='+')
+		{
+			for (int i = 0; i < SplitToMonom.length; i++) {
+
+				if(plusMin.charAt(i)=='-')
+				{
+					Monom Temp=new Monom(SplitToMonom[i]);
+					Monom Minos=new Monom ("-1");
+					Temp.multiply(Minos);
+					S_ToPolynom.add(Temp);
+				}	
+				else 
+				{
+					Monom Temp=new Monom(SplitToMonom[i]);
+					S_ToPolynom.add(Temp);
+				}
 			}
 		}
 		this._Polynom=((Polynom) S_ToPolynom.copy())._Polynom;
